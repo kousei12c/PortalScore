@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ring
+  - BounceItem
   layers:
   - Default
   - TransparentFX
