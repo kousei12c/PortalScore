@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ring
   - BounceItem
+  - Reflector
+  - SpeedBoost
   layers:
   - Default
   - TransparentFX
