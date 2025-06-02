@@ -1,0 +1,10 @@
+{
+    "asset": "1f0d8dbdf0fc201408e5b14fe9825367",
+    "fileName": "01972f0f-9143-7618-accb-b820038b3777_Preview.png",
+    "prompt": "Unlit/Color shader material with a gray color",
+    "negativePrompt": "",
+    "model": "575ecf67-4425-4939-97b9-5e138b8ee234",
+    "customSeed": 751413011,
+    "w3CTraceId": "1395c7e591f5da31af83c62b88394470",
+    "refinementMode": "Generation"
+}

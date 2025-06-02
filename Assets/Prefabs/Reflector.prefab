@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 924984306637106118}
   - component: {fileID: 885206657953762725}
   - component: {fileID: 7133205050736758320}
-  - component: {fileID: 2051853962327467026}
+  - component: {fileID: 5325845639637315594}
   m_Layer: 0
   m_Name: Reflector
   m_TagString: Reflector
@@ -138,7 +138,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2051853962327467026
+--- !u!114 &5325845639637315594
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,8 +147,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3677342663166258944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b710629010ebb6144983cab113076d0c, type: 3}
+  m_Script: {fileID: 11500000, guid: 501577db592caf6408884c24d671cde6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridItem
-  width: 1
-  height: 2
+  m_EditorClassIdentifier: Assembly-CSharp::DraggableItem

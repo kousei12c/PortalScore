@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 538834882b0b9954180f9afe34280f88
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - stonePrefab: {fileID: 1520234635641824248, guid: 52b4358d70c5e194bba723c4fc430011, type: 3}
+  - shootPoint: {instanceID: 0}
+  - trajectoryDrawer: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

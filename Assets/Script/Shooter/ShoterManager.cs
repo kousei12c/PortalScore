@@ -20,7 +20,7 @@ public class ShoterManager : MonoBehaviour
     void Update()
     {
         // 1️⃣ ドラッグ開始
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             worldPos.z = 0f;
@@ -33,7 +33,7 @@ public class ShoterManager : MonoBehaviour
         }
 
         // 2️⃣ ドラッグ中
-        if (Input.GetMouseButton(0) && tempStone != null)
+        if (Input.GetMouseButton(1) && tempStone != null)
         {
             Vector3 dragCurrentPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             dragCurrentPos.z = 0f;
@@ -51,7 +51,7 @@ public class ShoterManager : MonoBehaviour
         }
 
         // 3️⃣ ドラッグ終了（発射）
-        if (Input.GetMouseButtonUp(0) && tempStone != null)
+        if (Input.GetMouseButtonUp(1) && tempStone != null)
         {
             Vector3 dragEndPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             dragEndPos.z = 0f;
