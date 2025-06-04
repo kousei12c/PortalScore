@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6073235517068881018}
   m_Layer: 0
   m_Name: BounceItem
-  m_TagString: BounceItem
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

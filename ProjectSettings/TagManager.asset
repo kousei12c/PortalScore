@@ -8,6 +8,9 @@ TagManager:
   - BounceItem
   - Reflector
   - SpeedBoost
+  - Item
+  - ItemBoxDropZone
+  - GridArea
   layers:
   - Default
   - TransparentFX

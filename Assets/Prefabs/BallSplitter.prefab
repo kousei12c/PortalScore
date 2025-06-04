@@ -11,11 +11,13 @@ GameObject:
   - component: {fileID: 6793441240078481291}
   - component: {fileID: 8822456402668058172}
   - component: {fileID: 390874607929490277}
-  - component: {fileID: 6137414165750851232}
   - component: {fileID: 2911079936376109335}
+  - component: {fileID: -6116749858436304289}
+  - component: {fileID: 6137414165750851232}
+  - component: {fileID: -7397100692116406219}
   m_Layer: 0
   m_Name: BallSplitter
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,9 +108,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BallSplitter
   ballPrefab: {fileID: 1520234635641824248, guid: 52b4358d70c5e194bba723c4fc430011, type: 3}
-  numberOfClones: 1
+  numberOfClones: 2
   splitAngleRange: 30
   cloneSpeedMultiplier: 1
+--- !u!114 &2911079936376109335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834203464638831823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501577db592caf6408884c24d671cde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
+--- !u!114 &-6116749858436304289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834203464638831823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49c4685c6c92cb4c97274d50758ac50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SuckableItem
+  suckSpeed: 5
+  arrivalThreshold: 0.1
 --- !u!60 &6137414165750851232
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -159,15 +187,30 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
---- !u!114 &2911079936376109335
-MonoBehaviour:
+--- !u!50 &-7397100692116406219
+Rigidbody2D:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4834203464638831823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 501577db592caf6408884c24d671cde6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
