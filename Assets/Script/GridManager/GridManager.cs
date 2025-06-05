@@ -57,11 +57,7 @@ public class GridManager : MonoBehaviour
 
         return GridToWorldPosition(gridPos);
     }
-    public bool CanPlaceAt(Vector2Int gridPos, DraggableItem item)
-    {
-        // あとで制約（範囲外・重なりなど）を入れる
-        return true;
-    }
+
     public bool IsInsideGrid(Vector2Int gridPos)
     {
         return gridPos.x >= 0 && gridPos.x <= width &&

@@ -20,7 +20,7 @@ public class BallSplitter : MonoBehaviour
                 return;
             }
 
-            Vector2 originalVelocity = originalBallRb.velocity;
+            Vector2 originalVelocity = originalBallRb.linearVelocity;
             Vector2 spawnPosition = collision.transform.position; // 衝突したボールの位置を基準に
 
             // 指定された数だけボールを複製
@@ -50,7 +50,7 @@ public class BallSplitter : MonoBehaviour
                     Quaternion rotation = Quaternion.Euler(0, 0, angleOffset);
                     Vector2 newVelocity = rotation * originalVelocity.normalized * originalVelocity.magnitude * cloneSpeedMultiplier;
 
-                    clonedBallRb.velocity = newVelocity;
+                    clonedBallRb.linearVelocity = newVelocity;
                 }
             }
 

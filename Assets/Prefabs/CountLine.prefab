@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3601877429963138994}
   - component: {fileID: 5070080748579086528}
   - component: {fileID: -4140817962176935328}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CountLine
   m_TagString: Item
   m_Icon: {fileID: 0}

@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5136261226551794521}
   - component: {fileID: 4153682456442929210}
   - component: {fileID: 1685906178197090071}
-  m_Layer: 0
+  - component: {fileID: -4094355632630932053}
+  m_Layer: 8
   m_Name: SpeedBoost
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.42114633, g: 0.9811321, b: 0.61069816, a: 1}
   m_FlipX: 0
@@ -122,12 +123,12 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: -0.0063979626, y: 0}
+  m_Radius: 0.51919365
 --- !u!114 &1685906178197090071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,3 +141,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 501577db592caf6408884c24d671cde6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
+  suckSpeed: 5
+  gridAreaTag: GridArea
+  itemBoxZoneTag: ItemBoxZone
+  mouseDetectionLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  useSpecificLayer: 1
+  targetLayerName: DraggableItems
+  enableDebugLogs: 1
+  showRaycastDebug: 0
+  showLayerInfo: 1
+--- !u!50 &-4094355632630932053
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354144827295017078}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

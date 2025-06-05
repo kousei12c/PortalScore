@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6793441240078481291}
   - component: {fileID: 8822456402668058172}
-  - component: {fileID: 390874607929490277}
-  - component: {fileID: 2911079936376109335}
-  - component: {fileID: -6116749858436304289}
   - component: {fileID: 6137414165750851232}
   - component: {fileID: -7397100692116406219}
-  m_Layer: 0
+  - component: {fileID: 390874607929490277}
+  - component: {fileID: 3847861772492080431}
+  m_Layer: 8
   m_Name: BallSplitter
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4834203464638831823}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.15, y: 5.73, z: 0}
+  m_LocalPosition: {x: -6.145, y: 5.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83,9 +82,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.051886797, g: 1, b: 0.8349051, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -95,48 +94,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &390874607929490277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4834203464638831823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c08c41c8a3f68b46b1c4889f33d0736, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BallSplitter
-  ballPrefab: {fileID: 1520234635641824248, guid: 52b4358d70c5e194bba723c4fc430011, type: 3}
-  numberOfClones: 2
-  splitAngleRange: 30
-  cloneSpeedMultiplier: 1
---- !u!114 &2911079936376109335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4834203464638831823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 501577db592caf6408884c24d671cde6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
---- !u!114 &-6116749858436304289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4834203464638831823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c49c4685c6c92cb4c97274d50758ac50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SuckableItem
-  suckSpeed: 5
-  arrivalThreshold: 0.1
 --- !u!60 &6137414165750851232
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -183,9 +140,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
+    - - {x: 0, y: 0.5987563}
+      - {x: -0.52674675, y: -0.30738968}
+      - {x: 0.518723, y: -0.29669088}
   m_UseDelaunayMesh: 0
 --- !u!50 &-7397100692116406219
 Rigidbody2D:
@@ -214,3 +171,42 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &390874607929490277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834203464638831823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c08c41c8a3f68b46b1c4889f33d0736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BallSplitter
+  ballPrefab: {fileID: 1520234635641824248, guid: 52b4358d70c5e194bba723c4fc430011, type: 3}
+  numberOfClones: 2
+  splitAngleRange: 30
+  cloneSpeedMultiplier: 1
+--- !u!114 &3847861772492080431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834203464638831823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501577db592caf6408884c24d671cde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
+  suckSpeed: 5
+  gridAreaTag: GridArea
+  itemBoxZoneTag: ItemBoxZone
+  mouseDetectionLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  useSpecificLayer: 1
+  targetLayerName: DraggableItems
+  enableDebugLogs: 0
+  showRaycastDebug: 0
+  showLayerInfo: 0

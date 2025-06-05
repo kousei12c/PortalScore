@@ -9,8 +9,8 @@ TagManager:
   - Reflector
   - SpeedBoost
   - Item
-  - ItemBoxDropZone
   - GridArea
+  - ItemBoxZone
   layers:
   - Default
   - TransparentFX
@@ -20,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - DrableItems
   - 
   - 
   - 
