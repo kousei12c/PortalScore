@@ -13,7 +13,7 @@ public class Portal : MonoBehaviour
         if (!isTeleporting && targetPortal != null)
         {
             // 接触したのがボールかどうかをタグで判別（例："Ball"タグ）
-            if (other.CompareTag("BounceItem"))
+            if (other.CompareTag("Ball"))
             {
                 Portal targetPortalScript = targetPortal.GetComponent<Portal>();
                 if (targetPortalScript != null && targetPortalScript.spawnPoint != null)

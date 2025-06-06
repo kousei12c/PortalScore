@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7903978194614871367}
   - component: {fileID: 2490050674252118516}
   - component: {fileID: 6073235517068881018}
-  m_Layer: 0
-  m_Name: BounceItem
-  m_TagString: Item
+  m_Layer: 3
+  m_Name: Ball
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

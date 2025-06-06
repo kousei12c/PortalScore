@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -846696068347327324}
   m_Layer: 8
   m_Name: Reflector
-  m_TagString: Reflector
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,14 +154,13 @@ MonoBehaviour:
   suckSpeed: 5
   gridAreaTag: GridArea
   itemBoxZoneTag: ItemBoxZone
+  becomeTriggerWhenPlacedOnGrid: 0
+  useSpecificLayerForMouse: 1
+  draggableLayerName: DraggableItems
   mouseDetectionLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  useSpecificLayer: 1
-  targetLayerName: DraggableItems
   enableDebugLogs: 1
-  showRaycastDebug: 0
-  showLayerInfo: 1
 --- !u!50 &-846696068347327324
 Rigidbody2D:
   serializedVersion: 5

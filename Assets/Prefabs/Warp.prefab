@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3710430654384836720}
   - component: {fileID: 2887513410419131248}
   - component: {fileID: -859227587693291996}
-  - component: {fileID: 3885428809977377452}
   m_Layer: 8
   m_Name: Warp
   m_TagString: Item
@@ -145,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Portal
   targetPortal: {fileID: 6554813916266838851}
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 8042899134550701470, guid: 43a8341bd398308438f5f41a586e98a7, type: 3}
 --- !u!50 &2887513410419131248
 Rigidbody2D:
   serializedVersion: 5
@@ -188,29 +187,10 @@ MonoBehaviour:
   suckSpeed: 5
   gridAreaTag: GridArea
   itemBoxZoneTag: ItemBoxZone
+  becomeTriggerWhenPlacedOnGrid: 1
+  useSpecificLayerForMouse: 1
+  draggableLayerName: DraggableItems
   mouseDetectionLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  useSpecificLayer: 1
-  targetLayerName: DraggableItems
   enableDebugLogs: 1
-  showRaycastDebug: 0
-  showLayerInfo: 1
---- !u!114 &3885428809977377452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284805151852919386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5190263afe3db714f809e6e7ff0162a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridCollisionController
-  gridAreaTag: GridArea
-  enableDebugLogs: 1
-  targetCollider: {fileID: 0}
-  autoFindCollider: 0
-  triggerOnInGridArea: 1
-  triggerOnOutGridArea: 0

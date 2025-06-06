@@ -5,22 +5,22 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ring
-  - BounceItem
   - Reflector
   - SpeedBoost
   - Item
   - GridArea
   - ItemBoxZone
+  - Ball
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ball
   - Water
   - UI
   - 
   - 
-  - DrableItems
+  - DraggableItems
   - 
   - 
   - 

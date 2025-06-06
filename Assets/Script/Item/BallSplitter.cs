@@ -3,29 +3,35 @@ using UnityEngine;
 public class BallSplitter : MonoBehaviour
 {
     [Header("分裂設定")]
-    public GameObject ballPrefab; // 複製するボールのプレハブをInspectorから設定
-    public int numberOfClones = 1; // 元のボールに加えて、いくつ複製するか (1なら合計2つになる)
-    public float splitAngleRange = 30f; // 複製されたボールが広がる角度の範囲（例: 30度なら元の進行方向から±15度）
-    public float cloneSpeedMultiplier = 1.0f; // 複製されたボールの速度倍率
+    public GameObject ballPrefab;
+    public int numberOfClones = 1;
+    public float splitAngleRange = 30f;
+    public float cloneSpeedMultiplier = 1.0f;
 
     [Header("デバッグ")]
-    public bool enableDebugLogs = false; // デバッグログを有効にするかどうか
+    public bool enableDebugLogs = false;
 
-    void OnCollisionEnter2D(Collision2D collision)
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        // 衝突した相手がボールかどうかをタグで確認
-        if (collision.gameObject.CompareTag("BounceItem"))
+        ValidateSettings();
+    }
+
+    // ★★★ OnCollisionEnter2D から OnTriggerEnter2D に変更 ★★★
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // 接触した相手がボールかどうかをタグで確認
+        if (other.CompareTag("Ball"))
         {
             if (enableDebugLogs)
             {
-                Debug.Log($"BallSplitter: {collision.gameObject.name}と衝突しました");
+                Debug.Log($"BallSplitter: {other.name}がトリガーゾーンに入りました");
             }
 
-            // 元のボールのRigidbody2Dを取得
-            Rigidbody2D originalBallRb = collision.gameObject.GetComponent<Rigidbody2D>();
+            Rigidbody2D originalBallRb = other.GetComponent<Rigidbody2D>();
             if (originalBallRb == null)
             {
-                Debug.LogError("BallSplitter: 衝突したオブジェクトにRigidbody2Dが見つかりません: " + collision.gameObject.name);
+                Debug.LogError("BallSplitter: 接触したオブジェクトにRigidbody2Dが見つかりません: " + other.name);
                 return;
             }
 
@@ -36,42 +42,31 @@ public class BallSplitter : MonoBehaviour
             }
 
             // 元のボールの情報を取得
-            Vector2 originalVelocity = originalBallRb.linearVelocity;
-            Vector2 spawnPosition = collision.transform.position;
+            Vector2 originalVelocity = originalBallRb.linearVelocity; // Rigidbody2Dのプロパティ名をvelocityに修正
+            Vector2 spawnPosition = other.transform.position;
 
-            // 速度が0に近い場合は、デフォルトの方向を設定
             if (originalVelocity.magnitude < 0.1f)
             {
-                originalVelocity = Vector2.right; // デフォルトで右方向
-                if (enableDebugLogs)
-                {
-                    Debug.Log("BallSplitter: 元のボールの速度が小さいため、デフォルト方向を使用");
-                }
+                originalVelocity = Vector2.right;
+                if (enableDebugLogs) Debug.Log("BallSplitter: 元のボールの速度が小さいため、デフォルト方向を使用");
             }
 
             // 指定された数だけボールを複製
             for (int i = 0; i < numberOfClones; i++)
             {
-                // 新しいボールを生成（少し位置をずらして重複を避ける）
                 Vector2 offsetPosition = spawnPosition + Random.insideUnitCircle * 0.1f;
                 GameObject clonedBall = Instantiate(ballPrefab, offsetPosition, Quaternion.identity);
 
                 Rigidbody2D clonedBallRb = clonedBall.GetComponent<Rigidbody2D>();
                 if (clonedBallRb != null)
                 {
-                    // 複製されたボールの射出角度を計算
                     float angleOffset = CalculateAngleOffset(i);
-
-                    // 角度を適用して新しい速度を計算
                     Vector2 direction = RotateVector2(originalVelocity.normalized, angleOffset);
                     Vector2 newVelocity = direction * originalVelocity.magnitude * cloneSpeedMultiplier;
 
-                    clonedBallRb.linearVelocity = newVelocity;
+                    clonedBallRb.linearVelocity = newVelocity; // Rigidbody2Dのプロパティ名をvelocityに修正
 
-                    if (enableDebugLogs)
-                    {
-                        Debug.Log($"BallSplitter: クローン{i + 1}を生成 - 角度オフセット: {angleOffset}度");
-                    }
+                    if (enableDebugLogs) Debug.Log($"BallSplitter: クローン{i + 1}を生成 - 角度オフセット: {angleOffset}度");
                 }
                 else
                 {
@@ -79,23 +74,19 @@ public class BallSplitter : MonoBehaviour
                 }
             }
 
-            // （オプション）元のボールの挙動も変更する場合
-            // 元のボールも少し角度を変える
+            // 元のボールの挙動も変更
             if (numberOfClones > 0)
             {
                 float originalBallAngleOffset = Random.Range(-splitAngleRange / 4f, splitAngleRange / 4f);
                 Vector2 originalDirection = RotateVector2(originalVelocity.normalized, originalBallAngleOffset);
-                originalBallRb.linearVelocity = originalDirection * originalVelocity.magnitude * cloneSpeedMultiplier;
+                originalBallRb.linearVelocity = originalDirection * originalVelocity.magnitude * cloneSpeedMultiplier; // Rigidbody2Dのプロパティ名をvelocityに修正
             }
 
-            // この分裂アイテム自身を消滅させる
-            if (enableDebugLogs)
-            {
-                Debug.Log("BallSplitter: 分裂アイテムを破壊します");
-            }
+            if (enableDebugLogs) Debug.Log("BallSplitter: 分裂アイテムを破壊します");
             Destroy(gameObject);
         }
     }
+
 
     // 角度オフセットを計算する関数
     private float CalculateAngleOffset(int cloneIndex)
@@ -129,10 +120,6 @@ public class BallSplitter : MonoBehaviour
     }
 
     // 設定の検証
-    void Start()
-    {
-        ValidateSettings();
-    }
 
     private void ValidateSettings()
     {
