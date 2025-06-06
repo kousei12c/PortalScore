@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 4153682456442929210}
   - component: {fileID: 1685906178197090071}
   - component: {fileID: -4094355632630932053}
+  - component: {fileID: 2989813550258910311}
   m_Layer: 8
   m_Name: SpeedBoost
-  m_TagString: Item
+  m_TagString: SpeedBoost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,3 +180,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2989813550258910311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354144827295017078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5190263afe3db714f809e6e7ff0162a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridCollisionController
+  gridAreaTag: GridArea
+  enableDebugLogs: 1
+  targetCollider: {fileID: 0}
+  autoFindCollider: 1
+  triggerOnInGridArea: 1
+  triggerOnOutGridArea: 0
